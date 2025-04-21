@@ -5,7 +5,7 @@ import java.util.List;
 public class ParkingFloor extends BaseModel{
     private int floorNo;
 
-    private List<ParkingSpot> parkingSpots;
+    private List<ParkingSpot> parkingSpots; //you can use Set<ParkingSpot> as well here
 
     public int getFloorNo() {
         return floorNo;

@@ -8,6 +8,11 @@ public class Gate extends BaseModel{
     private Operator operator;
     private GateType gateType;
     private GateStatus gateStatus;
+    private ParkingFloor parkingFloor;
+
+    //PF PG => 1 : M
+    //1   M
+      // 1     1
 
     public int getGateNo() {
         return gateNo;

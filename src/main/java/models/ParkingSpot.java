@@ -5,9 +5,11 @@ import models.enums.VehicleType;
 
 public class ParkingSpot extends BaseModel{
     private ParkingSpotStatus parkingSpotStatus;
-    private ParkingFloor parkingFloor;
-    private int spotNo;
+    private ParkingFloor parkingFloor; //optional, fast retrieval
+    private int spotNo; //spotNo = 3
+    //parking_spot_id = different
     private VehicleType vehicleType;
+
 
     public ParkingSpotStatus getParkingSpotStatus() {
         return parkingSpotStatus;

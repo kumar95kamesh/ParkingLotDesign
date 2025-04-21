@@ -5,13 +5,13 @@ import models.enums.TicketStatus;
 import java.util.Date;
 
 public class Ticket extends BaseModel{
-    private String ticketNo;
-    private Gate generatedAt;
-    private Date entryTime;
-    private Operator generatedBy;
-    private Vehicle vehicle;
+    private String ticketNo; //done
+    private Gate generatedAt; //done
+    private Long entryTime; //done, epoch
+    private Operator generatedBy; //done
+    private Vehicle vehicle; // done
     private ParkingSpot parkingSpot;
-    private TicketStatus ticketStatus;
+    private TicketStatus ticketStatus; //done
 
     public String getTicketNo() {
         return ticketNo;
@@ -29,11 +29,11 @@ public class Ticket extends BaseModel{
         this.generatedAt = generatedAt;
     }
 
-    public Date getEntryTime() {
+    public Long getEntryTime() {
         return entryTime;
     }
 
-    public void setEntryTime(Date entryTime) {
+    public void setEntryTime(Long entryTime) {
         this.entryTime = entryTime;
     }
 
