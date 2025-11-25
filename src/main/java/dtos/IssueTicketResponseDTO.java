@@ -4,7 +4,7 @@ import models.Ticket;
 
 public class IssueTicketResponseDTO {
     private Ticket ticket; //assuming there's no sensitive data in the ticket object
-
+//agar sensitive info h to jo info necessary h only whi share kro.. like requestDTO
     private ResponseStatus responseStatus;
 
     public Ticket getTicket() {

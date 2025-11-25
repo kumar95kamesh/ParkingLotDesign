@@ -8,8 +8,9 @@ public class Gate extends BaseModel{
     private Operator operator;
     private GateType gateType;
     private GateStatus gateStatus;
-    private ParkingFloor parkingFloor;
+    private ParkingFloor parkingFloor;//based on cardinality we put it here
 
+    //parking floor parking gate
     //PF PG => 1 : M
     //1   M
       // 1     1

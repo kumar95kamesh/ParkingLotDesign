@@ -12,13 +12,13 @@ public class VechicleRepository {
 
     public Optional<Vehicle> findVehicleByVehicleNo(String vehicleNo){
         if(vehicleMap.containsKey(vehicleNo)){
-            return Optional.of(vehicleMap.get(vehicleNo));
+            return Optional.of(vehicleMap.get(vehicleNo));//vehicle no is unique so make it key
         }else{
             return Optional.empty();
         }
     }
 
-    public void save(Vehicle vehicle){
+    public void save(Vehicle vehicle){//to save vehicle in db for any new vehicle
         vehicleMap.put(vehicle.getNo(), vehicle);
     }
 }

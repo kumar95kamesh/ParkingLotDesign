@@ -9,7 +9,7 @@ public class Ticket extends BaseModel{
     private Gate generatedAt; //done
     private Long entryTime; //done, epoch
     private Operator generatedBy; //done
-    private Vehicle vehicle; // done
+    private Vehicle vehicle; // done//it will have vehicle details
     private ParkingSpot parkingSpot;
     private TicketStatus ticketStatus; //done
 

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class GateRepository {
+public class GateRepository {//This class is for validations to the gates
     private Map<Long, Gate> gateIdToGateMap = new HashMap<>();
 
     public GateRepository(){
@@ -16,7 +16,7 @@ public class GateRepository {
         gateIdToGateMap.put(20L, gate);
     }
 
-    public Optional<Gate> findGateById(Long id){
+    public Optional<Gate> findGateById(Long id){//Gate may be present or may not so return is optional
         if(gateIdToGateMap.containsKey(id)){
             return Optional.of(gateIdToGateMap.get(id));
         }else{

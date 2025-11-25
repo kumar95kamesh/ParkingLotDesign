@@ -32,7 +32,8 @@ public class TicketService {
         this.parkingLotRepository = parkingLotRepository;
         this.ticketRepository = ticketRepository;
     }
-
+    
+//This will provide ticket and this service will provide only info which doesn't contain internal info(Security)
     public Ticket issueTicket(Long gateId,
                               String vehicleNo,
                               String ownerName,
@@ -41,6 +42,8 @@ public class TicketService {
         //contain the business logic for generating the ticket
         Ticket ticket = new Ticket();
         ticket.setEntryTime(System.currentTimeMillis()); //epoch
+        //epoch is some time which is in count milli secs passed from jan 1970.. 
+        //Epoch time (also called Unix time or POSIX time) is a way of representing time as a single number.
 
         //checking the gate with the given gateId in the param
         Optional<Gate> optionalGate = gateRepository.findGateById(gateId);
@@ -50,7 +53,7 @@ public class TicketService {
             throw new GateNotFoundException("Gate with gateId " + gateId + " is not present in the parking lot");
         }
 
-        Gate gate = optionalGate.get();
+        Gate gate = optionalGate.get();//optionalGate is a list in optional so get(); 
 
         ticket.setGeneratedAt(gate);
         ticket.setGeneratedBy(gate.getOperator());

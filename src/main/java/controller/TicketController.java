@@ -16,16 +16,19 @@ public class TicketController {
 
     private TicketService ticketService;
 
-    public TicketController(TicketService ticketService){
-        this.ticketService = ticketService;
+    public TicketController(TicketService ticketService){//Ticket controller is dependant on ticket service.
+        this.ticketService = ticketService;//injecting dependancy... General practice
+        //This is constructor now if client has to create a ticket.. he has to use ticket service
+        //and here the info provided will be derived by ticket service
     }
 
-    // /ticket/book
+    // /ticket/book... So this mtd will be called by frontend to book ticket 
     //Response Entity
+    //So ticket will be issued with response Dto
     public IssueTicketResponseDTO issueTicket(IssueTicketRequestDTO issueTicketRequestDTO){
         IssueTicketResponseDTO issueTicketResponseDTO = new IssueTicketResponseDTO();
 
-        try {
+        try {//Here the limited info will be provided which will be extracted from request DTO
             Ticket ticket = ticketService.issueTicket(issueTicketRequestDTO.getGateId(),
                     issueTicketRequestDTO.getVehicleNumber(),
                     issueTicketRequestDTO.getVehicleOwnerName(),
@@ -33,7 +36,7 @@ public class TicketController {
                     issueTicketRequestDTO.getParkingLotId());
             issueTicketResponseDTO.setTicket(ticket);
             issueTicketResponseDTO.setResponseStatus(ResponseStatus.SUCCESS);
-        }catch (Exception ex){
+        }catch (Exception ex){//is any issue comes set status as failed
             issueTicketResponseDTO.setResponseStatus(ResponseStatus.FAILED);
         }
 
